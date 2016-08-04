@@ -1,0 +1,62 @@
+<!doctype html>
+	<head>
+		<title>Rio Summer Olympics Quiz</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="quiz.css">
+	</head>
+	
+	<body>
+	<div class="wrapper">
+		<form action="process.php" method="POST">
+		
+			<h1>Rio Summer Olympics Quiz</h1>
+		
+			<fieldset>
+				<legend>Quiz Items</legend>
+				
+				<!--Textbox input-->
+				<label for="numCountries">How many countries are in the 2016 Olypmics?</label>
+				<input type="text" name="numCountries" id="numCountries" value="" size="">
+				
+				<!--Radio buttons-->
+				<p>The first sport on the timetable is:</p>
+				<input type="radio" name="sport" value="Judo">Judo<br>
+				<input type="radio" name="sport" value="Shooting">Shooting<br>
+				<input type="radio" name="sport" value="Football">Football<br>
+				<input type="radio" name="sport" value="Weightlifting">Weightlifting<br>
+				
+				<p>Which country was <b>not</b> in the top 3 medal count in the last Olympics?</p>
+				<input type="radio" name="flag" value="China"><img src="_images/china.gif" alt="China">
+				<input type="radio" name="flag" value="Great Britain"><img src="_images/great-britain.gif" alt="Great Britai">
+				<input type="radio" name="flag" value="Russia"><img src="_images/russia.gif" alt="Russia">
+				<input type="radio" name="flag" value="United States"><img src="_images/united-states.gif" alt="United States">
+				
+				<!--Checkbox list-->
+				<p>Where were the last four Olympic Games played?</p>
+				<input type="checkbox" name="city[]" value="Atlanta">Atlanta<br>
+				<input type="checkbox" name="city[]" value="Athens">Athens<br>
+				<input type="checkbox" name="city[]" value="London">London<br>
+				<input type="checkbox" name="city[]" value="Beijing">Beijing<br>
+				<input type="checkbox" name="city[]" value="Sydney">Sydney<br>
+				
+				<!--Drop down menu-->
+				<p>Which game is no longer in the Olypmics?</p>
+				<select name="nonSport">
+					<option value="noSelection">Select a sport:</option>
+					<option value="baseball">Baseball</option>
+					<option value="beachVolleyball">Beach Volleyball</option>
+					<option value="bmx">BMX</option>
+					<option value="handBall">Hand Ball</option>
+					<option value="cricket">Cricket</option>
+					<option value="rugby">Rugby</option>
+				</select>
+			</fieldset>
+			
+			<br>
+			
+			<!--Submit button-->
+			<input type="submit" name="submitted" value="Submit">
+		</form>
+	</div>
+	</body>
+</html>

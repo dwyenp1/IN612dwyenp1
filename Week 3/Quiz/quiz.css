@@ -1,0 +1,20 @@
+html{
+	background-color: #03A5DD;
+}
+
+.wrapper{
+	max-width: 1400px;
+	background-color: #62BB48;
+}
+
+.h1 {
+	background-color: #9BC835;
+}
+body{
+	max-width: 1400px;
+	margin: auto;
+}
+
+fieldset{
+	padding-bottom: 30px;
+}
