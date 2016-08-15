@@ -9,7 +9,7 @@
 	<?php
 		$self = htmlentities($_SERVER['PHP_SELF']);
 		echo "<form action = '$self' method='POST'> ";
-		?>
+	?>
 	
 	<header>
 		<img src="pizzaBanner.jpg" alt="banner" />
@@ -25,8 +25,8 @@
 			<!--Radio buttons-->
 			<p>Select your pizza size:</p>
 			<input type="radio" name="size" value="Small $5">Small ($5)<br>
-			<input type="radio" name="size" value="Medium $5">Medium ($10)<br>
-			<input type="radio" name="size" value="Large $5">Large ($15)<br>
+			<input type="radio" name="size" value="Medium $10">Medium ($10)<br>
+			<input type="radio" name="size" value="Large $15">Large ($15)<br>
 				
 			<!--Checkbox list-->
 			<p>Select your toppings ($1 for each topping):</p>
@@ -39,7 +39,7 @@
 			<br>
 			
 			<!--Textbox input-->
-			<label for="numCountries">Delivery Address: <label>
+			<label for="deliveryAddress">Delivery Address: <label>
 			<input type="text" name="deliveryAddress" id="deliveryAddress" value="" size="">
 		</fieldset>
 			
