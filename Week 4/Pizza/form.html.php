@@ -6,10 +6,7 @@
 	</head>
 	
 	<body>
-	<?php
-		$self = htmlentities($_SERVER['PHP_SELF']);
-		echo "<form action = '$self' method='POST'> ";
-	?>
+	
 	
 	
 	
@@ -19,7 +16,12 @@
 	
 	
 	<div class="wrapper">
+	<?php
+		$self = htmlentities($_SERVER['PHP_SELF']);
+		echo "<form action ='$self' method='POST'> ";
+	?>
 	
+		
 		<br>
 			<fieldset>
 				<legend>Place Your Order</legend>
