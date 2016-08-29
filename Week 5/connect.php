@@ -1,8 +1,5 @@
 <?php
-	$host="localhost";
-	$userMS = "dwyenp1";
-	$passwordMS = "1000019755";
-	$database = "dwyenp1_IN612";
+	include "connect.inc.php";
 	
 	//connect to mySQL server
 	try

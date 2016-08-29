@@ -4,8 +4,10 @@
 	try
 	{
 		//Create Event table
-		$dropQuery = "DROP TABLE IF EXISTS tblEvent";
+		$dropQuery = "DROP TABLE IF EXISTS tblAthlete";
 		$pdo->exec($dropQuery);
+		$dropQuery = "DROP TABLE IF EXISTS tblEvent";
+		$pdo->exec($dropQuery);	
 		
 		$createQuery ="CREATE TABLE tblEvent
 		(
@@ -18,9 +20,6 @@
 		$pdo->exec($createQuery);
 		
 		//Create Athlete table
-		$dropQuery = "DROP TABLE IF EXISTS tblAthlete";
-		$pdo->exec($dropQuery);
-		
 		$createQuery ="CREATE TABLE tblAthlete
 		(
 			iD			INT(6) NOT NULL AUTO_INCREMENT,
@@ -45,4 +44,25 @@
 		include "error.html.php";
 		exit();
 	}
+	
+	include "insertEvents.php";
+	
+	include "insertAthletes.php";
+	
+	//Select all records
+	try
+	{
+		$selectString = "SELECT * FROM tblEvent";
+		$result = $pdo->query($selectString);
+		$selectString = "SELECT * FROM tblAthlete";
+		$result2 = $pdo->query($selectString);
+	}
+	catch(PDOException $e)
+	{
+		$error = "Select statement error";
+		include "error.html.php";
+		exit();
+	}
+	
+	include "output.html.php";
 ?>
