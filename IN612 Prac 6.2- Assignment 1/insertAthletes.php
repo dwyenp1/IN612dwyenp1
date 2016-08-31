@@ -1,5 +1,6 @@
 <?php	
 	//Insert athlete records
+	//Adds sport by ID number - might be a better way
 	try
 	{
 		$insertQuery = "INSERT INTO tblAthlete(lastName, firstName, gender, image, medal, eventId) VALUES('Carrington', 'Lisa', 'f', 'photos/Carrington.jpg', 'gold', '1')";

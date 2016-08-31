@@ -7,8 +7,22 @@
 </head>
 <body>
 
-	<br>
+	<table>
+		<tr>
+			<th>iD</th><th>lastName</th><th>firstName</th><th>gender</th><th>image</th><th>medal</th><th>eventId</th>
+		</tr>
 	
+	<?php
+		foreach($_POST[$row] as $row)
+		{
+			echo("<tr><td>$row[iD]</td><td>$row[lastName]</td><td>$row[firstName]</td><td>$row[gender]</td><td><img src=$row[image] alt='Athlete'></td><td>$row[medal]</td><td>$row[eventId]</td></tr>");
+		}
+	?>
+	
+	</table>
+	
+	<br>
+
 	<table>
 		<tr>
 			<th>iD</th><th>sport</th><th>event</th>

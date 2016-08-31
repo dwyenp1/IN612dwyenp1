@@ -7,6 +7,8 @@
 </head>
 <body>
 	<?php
+		include "connect.php";
+		
 		$self = htmlentities($_SERVER['PHP_SELF']);
 		echo "<form action ='$self' method='POST'> ";
 	?>
@@ -19,12 +21,22 @@
 		
 		<fieldset>
 			<legend>Select a Sport</legend>
-			<select>
-				<option value="1">Women's K-1 200m</option>
-				<option value="2">Men's Single Sculls</option>
-				<option value="3">Men's Coxless Pairs</option>
-				<option value="4">Men's 49er</option>
+
+			<select name=sportList>
+			<option value='0'>Show All</option>
+			
+			<?php
+			//Populate the list box from the database
+			$selectString = "SELECT sport,iD FROM tblEvent GROUP BY sport";
+			
+			foreach($pdo->query($selectString) as $row)
+			{
+				echo("<option value=$row[iD]>$row[sport]</option>");
+			}
+			?>
+			
 			</select>
+			
 			
 			<!--Submit button-->
 			<input type="submit" name="sportSelect" value="Submit">
