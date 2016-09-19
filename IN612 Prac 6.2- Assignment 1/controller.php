@@ -1,8 +1,12 @@
 <?php
+	/*
+	*
+	* Overview of project comment goes here
+	*
+	*/
 	if(isset($_POST['sportSelect']))
-	{
-		
-		include 'createAthletes.php';
+	{	
+		include 'output.html.php';
 	}
 	else
 	{

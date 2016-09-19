@@ -35,6 +35,9 @@
 				
 				<!--Submit button-->
 				<input type="submit" name="pageSelect" value="Add Country">
+				
+				<!--Submit button-->
+				<input type="submit" name="pageSelect" value="Add Athlete">
 			</div>
 		</form>
 	</div>

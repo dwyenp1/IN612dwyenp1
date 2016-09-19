@@ -1,14 +1,15 @@
 <?php
 	include "connect.php";
 	
+	//Set up the event/athlete tables with a foreign key
 	try
 	{
-		//Create Event table
 		$dropQuery = "DROP TABLE IF EXISTS tblAthlete";
 		$pdo->exec($dropQuery);
 		$dropQuery = "DROP TABLE IF EXISTS tblEvent";
-		$pdo->exec($dropQuery);	
+		$pdo->exec($dropQuery);
 		
+		//Create Event table
 		$createQuery ="CREATE TABLE tblEvent
 		(
 			iD		INT(6) NOT NULL AUTO_INCREMENT,
@@ -30,13 +31,11 @@
 			medal		VARCHAR(6)	NOT NULL,
 			eventId		INT(6) NOT NULL,
 			
-			PRIMARY KEY(ID),
+			PRIMARY KEY(iD),
 			FOREIGN KEY (eventId) REFERENCES tblEvent(iD)
 				ON DELETE CASCADE
 		)";
 		$pdo->exec($createQuery);
-		
-		
 	}
 	catch(PDOException $e)
 	{
@@ -46,23 +45,5 @@
 	}
 	
 	include "insertEvents.php";
-	
 	include "insertAthletes.php";
-	
-	//Select all records
-	try
-	{
-		$selectString = "SELECT * FROM tblEvent";
-		$result = $pdo->query($selectString);
-		$selectString = "SELECT * FROM tblAthlete";
-		$result2 = $pdo->query($selectString);
-	}
-	catch(PDOException $e)
-	{
-		$error = "Select statement error";
-		include "error.html.php";
-		exit();
-	}
-	
-	include "output.html.php";
 ?>

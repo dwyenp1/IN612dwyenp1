@@ -4,45 +4,56 @@
 	<title>Select a Sport</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="olympics.css">
+	
 </head>
 <body>
-	<?php
-		include "connect.php";
+	<!-- The first page the user sees. Selects the medal athletes to view 
+		 via a drop box with options divided by sport. -->
+		 
+	<div class="container">
+		<?php
+			/*
+			*
+			*Put this PHP section in the controller
+			*
+			*/
+			include "connect.php";
+			
+			$self = htmlentities($_SERVER['PHP_SELF']);
+			echo "<form action ='$self' method='POST'> ";
+		?>
 		
-		$self = htmlentities($_SERVER['PHP_SELF']);
-		echo "<form action ='$self' method='POST'> ";
-	?>
-
-		<h1>Rio Olympics 2016</h1>
+		<!-- Main logo -->
+		<img class="logo" src="logos/Rio_2016_logo.svg.png" alt="Rio Olympics 2016">
 		
 		<br>
 		
-		<h3>Athlete Database</h3>
-		
-		<fieldset>
-			<legend>Select a Sport</legend>
+		<h3>Athlete Database</h3>	
+			<div class="dropDownList">
 
-			<select name=sportList>
-			<option value='0'>Show All</option>
-			
-			<?php
-			//Populate the list box from the database
-			$selectString = "SELECT sport,iD FROM tblEvent GROUP BY sport";
-			
-			foreach($pdo->query($selectString) as $row)
-			{
-				echo("<option value=$row[iD]>$row[sport]</option>");
-			}
-			?>
-			
-			</select>
-			
-			
-			<!--Submit button-->
-			<input type="submit" name="sportSelect" value="Submit">
-		</fieldset>
-	</form>
-
+				<select name=sportList>
+				<option value='Show All'>Show All</option>
+				
+				<?php
+				//Populate the list box from the database
+				//This selectString should go in the controller
+				$selectString = "SELECT sport FROM tblEvent GROUP BY sport";
+				
+				foreach($pdo->query($selectString) as $row)
+				{
+					echo("<option value='$row[sport]'>$row[sport]</option>");
+				}
+				?>
+				
+				</select>
+				
+				<br>
+				
+				<!--Submit button-->
+				<input type="submit" name="sportSelect" value="Submit">
+			</div>
+		</form>
+	</div>
 
 </body>
 </html>

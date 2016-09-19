@@ -12,8 +12,18 @@
 			case "Add Country":
 				include 'addCountry.html.php';
 				break;
+			case "Add Athlete";
+				include 'addAthlete.html.php';
+				break;
 		}
-		
+	}
+	elseif(isset($_POST['country']))
+	{
+		include 'addCountryUser.php';
+	}
+	elseif(isset($_POST['athlete']))
+	{
+		include 'addAthleteUser.php';
 	}
 	else
 	{
