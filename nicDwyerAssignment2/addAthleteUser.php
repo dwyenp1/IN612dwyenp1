@@ -2,7 +2,7 @@
 	//Insert athlete records using a prepared statement
 	try
 	{
-		include 'connect.php'
+		include 'connect.php';
 		
 		$stmt = $pdo->prepare("INSERT INTO tblAthlete2(lastName, firstName, gender, image, sport, countryId) VALUES(:lastName, :firstName, :gender, :image, :sport, :countryId)");
 		$stmt->bindParam(':lastName', $lastName);
@@ -23,11 +23,12 @@
 		echo("Athlete successfully added");
 		$self = htmlentities($_SERVER['PHP_SELF']);
 		echo("<form action ='$self' method='POST'> ");
-		echo('<input type="submit" name="pageSelect" value="Display Athletes">');
+		echo('<input type="submit" name="pageSelect" value="Display Athle tes">');
 		echo("</form>");
 	}
 	catch(PDOException $e)
 	{
+		echo($_POST["countryId"]);
 		$error = "Inserting athlete data failed";
 		include "error.html.php";
 		exit();

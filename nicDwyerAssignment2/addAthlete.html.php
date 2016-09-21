@@ -93,10 +93,21 @@
 	  Sport: <input type="text" name="sport" value="<?php echo $sport;?>">
 	  <span class="error">* <?php echo $sportErr;?></span>
 	  <br><br>
-	  Country ID: <input type="text" name="countryId" value="<?php echo $countryId;?>">
-	  <span class="error">* <?php echo $countryIdErr;?></span>
-	  <br><br>
-
+	  Country ID: <select name="countryId">
+				<?php
+				//Populate the list box from the database
+				$selectString = "SELECT name, iD FROM tblCountry GROUP BY name";
+				
+				foreach($pdo->query($selectString) as $row)
+				{
+					echo("<option value='$row[iD]'>$row[name]</option>");
+				}
+				?>
+				
+		</select>
+		
+		<br><br>
+		
 	  <input type="submit" name="athlete" value="Add">  
 	</form>
 
