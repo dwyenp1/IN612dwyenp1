@@ -23,7 +23,7 @@
 		echo("Athlete successfully added");
 		$self = htmlentities($_SERVER['PHP_SELF']);
 		echo("<form action ='$self' method='POST'> ");
-		echo('<input type="submit" name="pageSelect" value="Display Athle tes">');
+		echo('<input type="submit" name="pageSelect" value="Display Athletes">');
 		echo("</form>");
 	}
 	catch(PDOException $e)

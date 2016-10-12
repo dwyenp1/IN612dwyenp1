@@ -75,7 +75,7 @@
 		}
 	?>
 
-	<h2>Add Country</h2>
+	<h2>Add Athlete</h2>
 	<p><span class="error">* required field.</span></p>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
 	  Last Name: <input type="text" name="lastName" value="<?php echo $lastName;?>">

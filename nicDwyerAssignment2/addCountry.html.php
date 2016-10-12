@@ -56,7 +56,6 @@
 	  <span class="error">* <?php echo $nameErr;?></span>
 	  <br><br>
 	  Population: <input type="text" name="population" value="<?php echo $population;?>">
-	  <span class="error">* <?php echo $populationErr;?></span>
 	  <br><br>
 	  Flag: <input type="text" name="flagImage" value="<?php echo $flagImage;?>">
 	  <span class="error">* <?php echo $flagImageErr;?></span>
